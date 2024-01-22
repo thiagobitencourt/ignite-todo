@@ -1,0 +1,25 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-list {
+    list-style: none;
+}
+
+.list-item li {
+    
+}
+
+.empty-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--size-14);
+    line-height: var(--line-height);
+}
+
+.empty-message img {
+    padding: 2rem;
+}
