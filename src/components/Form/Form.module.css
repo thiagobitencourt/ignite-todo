@@ -1,0 +1,41 @@
+.new-todo {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem;
+}
+
+.new-todo input, .new-todo button {
+    border-radius: 0.5rem;
+    height: 54px;
+}
+
+.new-todo input {
+    background-color: var(--gray-500);
+    border: 1px solid var(--gray-700);
+    color: var(--gray-100);
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+
+.new-todo input:focus-visible {
+    outline: 1px solid var(--purple);
+}
+
+.new-todo button {
+    background-color: var(--blue-dark);
+    color: var(--gray-100);
+    font-weight: bold;
+    padding: 0 2rem;
+    cursor: pointer;
+    border: none;
+}
+
+.new-todo button img {
+    margin-bottom: -4px;
+    margin-left: 5px;
+}
+
+.new-todo button:hover, .new-todo button:focus-visible {
+    background-color: var(--blue);
+    outline: none;
+}

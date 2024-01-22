@@ -1,5 +1,8 @@
-.todo {
+.container {
   display: flex;
   flex-direction: column;
   align-content: center;
+  max-width: 60vw;
+  margin: 0 auto;
+  margin-top: -2rem;
 }
