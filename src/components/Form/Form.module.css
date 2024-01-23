@@ -5,7 +5,7 @@
 }
 
 .new-todo input, .new-todo button {
-    border-radius: 0.5rem;
+    border-radius: var(--radius);
     height: 54px;
 }
 
