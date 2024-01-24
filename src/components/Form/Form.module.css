@@ -35,7 +35,7 @@
     cursor: not-allowed;
 }
 
-.new-todo button img {
+.new-todo button svg {
     margin-bottom: -4px;
     margin-left: 5px;
 }

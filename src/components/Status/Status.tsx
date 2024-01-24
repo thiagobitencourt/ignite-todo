@@ -2,7 +2,7 @@ import styles from './Status.module.css';
 
 export function Status({ items }) {
     const criadas = items.length;
-    const concluidas = items.filter(item => item.concluida).length;
+    const concluidas = items.filter(item => item.completed).length;
 
     return (
         <div className={styles.statusBar}>

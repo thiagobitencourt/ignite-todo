@@ -1,10 +1,10 @@
 import styles from './Header.module.css';
-import logo from '../../assets/logo.svg';
+import { LogoIcon } from '../Icons/Icons';
 
 export function Header() {
     return (
         <header className={styles.header}>
-            <img src={logo} />
+            <LogoIcon />
         </header>
     )
 }

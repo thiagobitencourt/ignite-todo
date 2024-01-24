@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import plusIcon from '../../assets/plus-icon.svg';
 import styles from './Form.module.css';
+import { PlusIcon } from '../Icons/Icons';
 
 export function Form(props) {
     const [newTodo, setNewTodo] = useState('');
@@ -22,7 +22,7 @@ export function Form(props) {
             <input name="todo" placeholder="Adicione uma nova tarefa" onChange={handleNewTodoChange} value={newTodo} />
             <button disabled={!newTodo}>
                 <span>Criar</span>
-                <img src={plusIcon} />
+                <PlusIcon />
             </button>
         </form>
     )
