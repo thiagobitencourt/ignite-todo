@@ -30,12 +30,17 @@
     border: none;
 }
 
+.new-todo button:disabled {
+    background-color: var(--gray-300);
+    cursor: not-allowed;
+}
+
 .new-todo button img {
     margin-bottom: -4px;
     margin-left: 5px;
 }
 
-.new-todo button:hover, .new-todo button:focus-visible {
+.new-todo button:hover:not([disabled]), .new-todo button:focus-visible {
     background-color: var(--blue);
     outline: none;
 }
