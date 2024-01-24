@@ -28,4 +28,5 @@ body {
   font-family: 'Inter', sans-serif;
   background: var(--gray-600);
   color: var(--gray-300);
+  font-size: var(--size-14);
 }

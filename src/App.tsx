@@ -19,12 +19,15 @@ function App() {
   }
 
   function handleToggleComplete(item, completeStatus) {
-    setItems(items.map(todo => {
+    const sortedItemsList = items.map(todo => {
       if (todo.id === item.id) {
         todo.completed = completeStatus;
       }
       return todo;
-    }));
+    });
+    // Sort, false values first
+    sortedItemsList.sort((x, y) => (x.completed === y.completed) ? 0 : x.completed ? 1 : -1);
+    setItems(sortedItemsList);
   }
 
   return (
