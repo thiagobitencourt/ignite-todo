@@ -1,0 +1,26 @@
+.statusBar {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 0 2em 0;
+    font-weight: bold;
+    size: var(--size-14);
+}
+
+.todo {
+    color: var(--blue);
+}
+
+.done {
+    color: var(--purple);
+}
+
+.counter {
+    border-radius: 2rem;
+    background-color: var(--gray-400);
+    color: var(--gray-200);
+    width: 30px;
+    text-align: center;
+    font-size: var(--size-12);
+    margin-left: 10px;
+    padding: 3px 10px;
+}

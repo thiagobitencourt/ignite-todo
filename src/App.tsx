@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Header } from './components/Header/Header';
 import { List } from './components/List/List';
 import { Form } from './components/Form/Form';
+import { Status } from './components/Status/Status';
 
 import styles from './App.module.css';
 
@@ -17,6 +18,7 @@ function App() {
         <Header />
         <main className={styles.container}>
           <Form onNewTodo={handleNewTodo} />
+          <Status items={items} />
           <List items={items}/>
         </main>
     </>
