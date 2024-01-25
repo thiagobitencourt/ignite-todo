@@ -1,6 +1,11 @@
+import { Todo } from '../../types';
 import styles from './Status.module.css';
 
-export function Status({ items }) {
+export interface StatusProps {
+    items: Todo[];
+}
+
+export function Status({ items }: StatusProps) {
     const criadas = items.length;
     const concluidas = items.filter(item => item.completed).length;
 

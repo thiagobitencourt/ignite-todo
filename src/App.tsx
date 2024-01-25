@@ -3,31 +3,33 @@ import { Header } from './components/Header/Header';
 import { List } from './components/List/List';
 import { Form } from './components/Form/Form';
 import { Status } from './components/Status/Status';
+import { Todo } from './types';
 
 import styles from './App.module.css';
 
 function App() {
-  const [items, setItems] = useState([  ]);
+  const [todoList, setTodoList] = useState([] as Todo[]);
 
-  function handleNewTodo(newItem) {
-    const itemObj = { id: items.length, todo: newItem, completed: false };
-    setItems(itemsList => [itemObj, ...itemsList]);
+  function handleNewTodo(todoText: string) {
+    const newTodo: Todo = { id: todoList.length, text: todoText, completed: false };
+    setTodoList(currentList => [newTodo, ...currentList]);
   }
   
-  function handleDeleteItem(deleteItem) {
-    setItems(itemsList => itemsList.filter(item => item.id !== deleteItem.id));
+  function handleDeleteTodo(deleteTodoItem: Todo) {
+    setTodoList((currentList: Todo[]) => currentList.filter(todo => todo.id !== deleteTodoItem.id));
   }
 
-  function handleToggleComplete(item, completeStatus) {
-    const sortedItemsList = items.map(todo => {
-      if (todo.id === item.id) {
+  function handleToggleCompleteTodo(todoItem: Todo, completeStatus: boolean) {
+    const updatedTodoList = todoList.map(todo => {
+      if (todo.id === todoItem.id) {
         todo.completed = completeStatus;
       }
       return todo;
     });
+
     // Sort, false values first
-    sortedItemsList.sort((x, y) => (x.completed === y.completed) ? 0 : x.completed ? 1 : -1);
-    setItems(sortedItemsList);
+    updatedTodoList.sort((x, y) => (x.completed === y.completed) ? 0 : x.completed ? 1 : -1);
+    setTodoList(updatedTodoList);
   }
 
   return (
@@ -35,8 +37,8 @@ function App() {
         <Header />
         <main className={styles.container}>
           <Form onNewTodo={handleNewTodo} />
-          <Status items={items} />
-          <List items={items} onDeleteItem={handleDeleteItem} onToggleComplete={handleToggleComplete} />
+          <Status items={todoList} />
+          <List items={todoList} onDeleteItem={handleDeleteTodo} onToggleComplete={handleToggleCompleteTodo} />
         </main>
     </>
   )

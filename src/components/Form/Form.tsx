@@ -1,11 +1,15 @@
-import { useState } from 'react';
-import styles from './Form.module.css';
+import { ChangeEvent, SyntheticEvent, useState } from 'react';
 import { PlusIcon } from '../Icons/Icons';
+import styles from './Form.module.css';
 
-export function Form(props) {
+export interface FormProps {
+    onNewTodo: (todoText: string) => void;
+}
+
+export function Form(props: FormProps) {
     const [newTodo, setNewTodo] = useState('');
 
-    function handleSubmitNewTodo(event) {
+    function handleSubmitNewTodo(event: SyntheticEvent<HTMLFormElement>) {
         event.preventDefault();
         if (newTodo) {
             props.onNewTodo(newTodo);
@@ -13,7 +17,7 @@ export function Form(props) {
         }
     }
 
-    function handleNewTodoChange(event) {
+    function handleNewTodoChange(event: ChangeEvent<HTMLInputElement>) {
         setNewTodo(event.target.value);
     }
 

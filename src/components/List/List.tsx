@@ -1,15 +1,21 @@
-import styles from './List.module.css';
 import { Item } from './Item/Item';
 import { EmptyIcon } from '../Icons/Icons';
+import { Todo } from '../../types';
+import styles from './List.module.css';
 
-export function List({ items, onDeleteItem, onToggleComplete }) {
+export interface ListProps {
+    items: Todo[];
+    onDeleteItem: (todo: Todo) => void;
+    onToggleComplete: (todo: Todo, status: boolean) => void
+}
 
+export function List({ items, onDeleteItem, onToggleComplete }: ListProps) {
     const hasItems = !!items?.length;
 
     function renderItemList() {
         return (
             <ul className={styles['item-list']}>
-                {items.map(item => <Item key={item.id} item={item} onDelete={() => onDeleteItem(item)} onToggleComplete={(status) => onToggleComplete(item, status)}/>)}
+                {items.map(item => <Item key={item.id} todo={item} onDelete={() => onDeleteItem(item)} onToggleComplete={(status) => onToggleComplete(item, status)}/>)}
             </ul>
         );
     }
